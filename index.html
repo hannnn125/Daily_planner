@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Planner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Daily Planner</h1>
+      <p class="header-date">2026년 6월 27일 (토)</p>
+    </header>
+
+    <main class="main">
+      <section class="planner-panel">
+        <div class="planner-banner">
+          <div class="dday">
+            <span class="dday-title">졸업까지</span>
+            <span class="dday-value">D-42</span>
+          </div>
+          <div class="daily-quote">
+            <span class="daily-quote-label">오늘의 한마디</span>
+            <input type="text" class="daily-quote-text" value="조금씩이라도 꾸준히." placeholder="오늘의 한마디를 입력하세요">
+            <span class="total-study-label">총공부시간</span>
+            <span class="total-study-time">2h 30m</span>
+          </div>
+        </div>
+
+        <div class="planner-content">
+      <!-- Todo -->
+      <section class="todo-panel">
+        <h2 class="panel-title panel-title--section">할 일</h2>
+
+        <div class="task-table">
+          <div class="task-table-header">
+            <span class="task-col task-col--check">Check</span>
+            <span class="task-col task-col--subject">Subject</span>
+            <span class="task-col task-col--plan">Plan</span>
+          </div>
+
+          <ul class="task-list">
+            <li class="task-item task-item--active">
+              <button type="button" class="task-status task-status--triangle" aria-label="진행 중"></button>
+              <select class="task-subject">
+                <option value="">토픽 선택</option>
+                <option value="school">학교</option>
+                <option value="study" selected>개인공부</option>
+                <option value="paper">논문정리</option>
+                <option value="etc">기타</option>
+              </select>
+              <input type="text" class="task-plan" value="알고리즘 문제 3개 풀기 · LeetCode medium">
+            </li>
+
+            <li class="task-item">
+              <button type="button" class="task-status task-status--x" aria-label="대기">×</button>
+              <select class="task-subject">
+                <option value="">토픽 선택</option>
+                <option value="school">학교</option>
+                <option value="study">개인공부</option>
+                <option value="paper">논문정리</option>
+                <option value="etc" selected>기타</option>
+              </select>
+              <input type="text" class="task-plan" value="헬스장 1시간 · 가슴/삼두">
+            </li>
+
+            <li class="task-item">
+              <button type="button" class="task-status task-status--x" aria-label="대기">×</button>
+              <select class="task-subject">
+                <option value="">토픽 선택</option>
+                <option value="school" selected>학교</option>
+                <option value="study">개인공부</option>
+                <option value="paper">논문정리</option>
+                <option value="etc">기타</option>
+              </select>
+              <input type="text" class="task-plan" value="팀 프로젝트 API 연동 및 PR 리뷰">
+            </li>
+
+            <li class="task-item task-item--completed">
+              <button type="button" class="task-status task-status--circle" aria-label="완료"></button>
+              <select class="task-subject" disabled>
+                <option value="">토픽 선택</option>
+                <option value="school">학교</option>
+                <option value="study">개인공부</option>
+                <option value="paper" selected>논문정리</option>
+                <option value="etc">기타</option>
+              </select>
+              <input type="text" class="task-plan" value="Transformer 논문 3장 요약 정리" disabled>
+            </li>
+          </ul>
+        </div>
+
+        <button type="button" class="btn-add-circle" aria-label="할일 추가">+</button>
+      </section>
+
+      <!-- 시간표 -->
+      <section class="timetable-panel">
+        <h2 class="panel-title panel-title--section">시간표</h2>
+
+        <div class="timetable">
+          <div class="timetable-header">
+            <div class="timetable-corner"></div>
+            <div class="col-label">00</div>
+            <div class="col-label">10</div>
+            <div class="col-label">20</div>
+            <div class="col-label">30</div>
+            <div class="col-label">40</div>
+            <div class="col-label">50</div>
+          </div>
+
+          <div class="timetable-body">
+            <div class="timetable-rows">
+            <div class="timetable-row">
+              <div class="row-label">06</div>
+              <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">07</div>
+              <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">08</div>
+              <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">09</div>
+              <div class="time-slot time-slot--filled time-slot--study time-slot--label"><span class="time-slot-label">공부</span></div>
+              <div class="time-slot time-slot--filled time-slot--study"></div>
+              <div class="time-slot time-slot--filled time-slot--study"></div>
+              <div class="time-slot time-slot--filled time-slot--study"></div>
+              <div class="time-slot time-slot--filled time-slot--study"></div>
+              <div class="time-slot time-slot--filled time-slot--study"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">10</div>
+              <div class="time-slot time-slot--filled time-slot--study"></div>
+              <div class="time-slot time-slot--filled time-slot--study"></div>
+              <div class="time-slot time-slot--filled time-slot--study"></div>
+              <div class="time-slot time-slot--filled time-slot--study"></div>
+              <div class="time-slot"></div>
+              <div class="time-slot"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">11</div>
+              <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">12</div>
+              <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">13</div>
+              <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">14</div>
+              <div class="time-slot time-slot--filled time-slot--exercise time-slot--label"><span class="time-slot-label">운동</span></div>
+              <div class="time-slot time-slot--filled time-slot--exercise"></div>
+              <div class="time-slot time-slot--filled time-slot--exercise"></div>
+              <div class="time-slot time-slot--filled time-slot--exercise"></div>
+              <div class="time-slot time-slot--filled time-slot--exercise"></div>
+              <div class="time-slot time-slot--filled time-slot--exercise"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">15</div>
+              <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">16</div>
+              <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">17</div>
+              <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">18</div>
+              <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">19</div>
+              <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">20</div>
+              <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">21</div>
+              <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">22</div>
+              <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">23</div>
+              <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
+            <div class="timetable-row">
+              <div class="row-label">24</div>
+              <div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div><div class="time-slot"></div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        </div>
+
+        <section class="note-panel">
+          <h2 class="panel-title panel-title--section">Note</h2>
+          <textarea class="note-text" placeholder="메모를 입력하세요...">오늘 회의에서 논의된 API 스펙 변경 사항 정리 필요</textarea>
+        </section>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
